@@ -21,6 +21,9 @@ const destroyCollection = document.querySelector('button[data-action="destroy"]'
 const boxesRef = document.querySelector('#boxes');
 
 function createBoxes(amount) { 
+  if (boxesRef.children.length > 0) { 
+    destroyBoxes(); 
+  }
   let size = 30;
   for (let i = 0; i < amount; i += 1) { 
     const divElement = document.createElement('div');
